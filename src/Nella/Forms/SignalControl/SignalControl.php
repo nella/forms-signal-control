@@ -84,6 +84,7 @@ trait SignalControl
 
     /**
      * Generates URL to presenter, action or signal.
+     * 
      * @param string destination in format "signal!"
      * @param array|mixed[]
      * @return string
