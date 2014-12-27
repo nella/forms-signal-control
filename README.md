@@ -2,7 +2,7 @@ Signal form control for [Nette Framework](http://nette.org)
 =============================================================================================
 
 [![Build Status](https://img.shields.io/travis/nella/forms-signal-control.svg?style=flat-square)](https://travis-ci.org/nella/forms-signal-control)
-[![SensioLabsInsight Status](https://insight.sensiolabs.com/projects/6c814be4-3f3d-4e09-a0b0-debd409a900c/mini.png)](https://insight.sensiolabs.com/projects/6c814be4-3f3d-4e09-a0b0-debd409a900c)
+[![SensioLabsInsight Status](https://img.shields.io/sensiolabs/i/6c814be4-3f3d-4e09-a0b0-debd409a900c.svg?style=flat-square)](https://insight.sensiolabs.com/projects/6c814be4-3f3d-4e09-a0b0-debd409a900c)
 [![Latest Stable Version](https://img.shields.io/packagist/v/nella/forms-signal-control.svg?style=flat-square)](https://packagist.org/packages/nella/forms-signal-control)
 [![Composer Downloads](https://img.shields.io/packagist/dt/nella/forms-signal-control.svg?style=flat-square)](https://packagist.org/packages/nella/forms-signal-control)
 [![Dependency Status](https://img.shields.io/versioneye/d/user/projects/5492e271dd709d6dbd000259.svg?style=flat-square)](https://www.versioneye.com/user/projects/5492e271dd709d6dbd000259)
