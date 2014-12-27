@@ -22,6 +22,9 @@
 			"Nella\\Forms\\SignalControl\\": "src/Nella/Forms/SignalControl"
 		}
 	},
+	"autoload-dev": {
+		"classmap": ["tests/Nella"]
+    },
 	"require": {
 		"php": ">=5.4.0",
 		"nette/application": "~2.2,<2.3.0",

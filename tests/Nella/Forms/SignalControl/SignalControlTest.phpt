@@ -17,8 +17,6 @@ use Nette\Application\UI\Form;
 use Tester\Assert;
 
 require __DIR__ . '/../../../bootstrap.php';
-require __DIR__ . '/SignalControlMock.php';
-require __DIR__ . '/SignalControlPresenterMock.php';
 
 class SignalControlTest extends \Tester\TestCase
 {
