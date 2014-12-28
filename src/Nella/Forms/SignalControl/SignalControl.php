@@ -48,6 +48,11 @@ trait SignalControl
 	 */
 	protected function attached($component)
 	{
+		if (!$this instanceof \Nette\Application\UI\ISignalReceiver) {
+			throw new \Nette\InvalidStateException(
+				sprintf('%s must implements Nette\Application\UI\ISignalReceiver', get_called_class())
+			);
+		}
 		if (!$component instanceof Form && !$component instanceof Presenter) {
 			throw new \Nette\InvalidStateException(
 				sprintf('%s must be attached to Nette\Application\UI\Form', get_called_class())

@@ -97,6 +97,16 @@ class SignalControlTest extends \Tester\TestCase
 	}
 
 	/**
+	 * @throws \Nette\InvalidStateException
+	 */
+	public function testControlNotImplementSignalReceiver()
+	{
+		$form = new Form();
+		$control = new SignalControlInvalidMock();
+		$form->addComponent($control, 'test');
+	}
+
+	/**
 	 * @param array|mixed[]
 	 * @param string|NULL
 	 * @return SignalControlMock
