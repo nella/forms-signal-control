@@ -13,28 +13,27 @@ namespace Nella\Forms\SignalControl;
 class SignalControlMock extends \Nette\Forms\Controls\TextInput implements \Nette\Application\UI\ISignalReceiver
 {
 
-    use SignalControl;
+	use SignalControl;
 
+	public $signalValues = FALSE;
 
-    public $signalValues = FALSE;
+	/**
+	 * @param mixed
+	 * @return mixed
+	 */
+	public function handleSignal($value)
+	{
+		$this->signalValues = func_get_args();
+	}
 
-    /**
-     * @param mixed
-     * @return mixed
-     */
-    public function handleSignal($value)
-    {
-        $this->signalValues = func_get_args();
-    }
-
-    /**
-     * @param string
-     * @param array|mixed
-     * @return string
-     */
-    public function linkMock($destination, array $args = array())
-    {
-        return $this->link($destination, $args);
-    }
+	/**
+	 * @param string
+	 * @param array|mixed
+	 * @return string
+	 */
+	public function linkMock($destination, array $args = array())
+	{
+		return $this->link($destination, $args);
+	}
 
 }

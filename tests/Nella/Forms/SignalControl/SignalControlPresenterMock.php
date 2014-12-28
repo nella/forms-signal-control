@@ -13,33 +13,33 @@ namespace Nella\Forms\SignalControl;
 class SignalControlPresenterMock extends \Nette\Application\UI\Presenter
 {
 
-    public function __construct(array $globalParams = array(), $signal = NULL)
-    {
-        parent::__construct();
+	public function __construct(array $globalParams = array(), $signal = NULL)
+	{
+		parent::__construct();
 
-        $signalReceiver = substr($signal, 0, strrpos($signal, '-'));
-        $signal = substr($signal, strrpos($signal, '-') + 1);
+		$signalReceiver = substr($signal, 0, strrpos($signal, '-'));
+		$signal = substr($signal, strrpos($signal, '-') + 1);
 
-        $globalParamsReflection = $this->getReflection()->getParentClass()->getProperty('globalParams');
-        $globalParamsReflection->setAccessible(TRUE);
-        $globalParamsReflection->setValue($this, $globalParams);
-        $signalReceiverReflection = $this->getReflection()->getParentClass()->getProperty('signalReceiver');
-        $signalReceiverReflection->setAccessible(TRUE);
-        $signalReceiverReflection->setValue($this, $signalReceiver);
-        $signalReflection = $this->getReflection()->getParentClass()->getProperty('signal');
-        $signalReflection->setAccessible(TRUE);
-        $signalReflection->setValue($this, $signal);
-    }
+		$globalParamsReflection = $this->getReflection()->getParentClass()->getProperty('globalParams');
+		$globalParamsReflection->setAccessible(TRUE);
+		$globalParamsReflection->setValue($this, $globalParams);
+		$signalReceiverReflection = $this->getReflection()->getParentClass()->getProperty('signalReceiver');
+		$signalReceiverReflection->setAccessible(TRUE);
+		$signalReceiverReflection->setValue($this, $signalReceiver);
+		$signalReflection = $this->getReflection()->getParentClass()->getProperty('signal');
+		$signalReflection->setAccessible(TRUE);
+		$signalReflection->setValue($this, $signal);
+	}
 
-    public function link($destination, $args = array())
-    {
-        $url = new \Nette\Http\Url('http://localhost');
-        $args['do'] = substr($destination, substr($destination, 0, 2) === '//' ? 2 : 0, -1);
-        foreach ($args as $key => $value) {
-            $url->setQueryParameter($key, $value);
-        }
+	public function link($destination, $args = array())
+	{
+		$url = new \Nette\Http\Url('http://localhost');
+		$args['do'] = substr($destination, substr($destination, 0, 2) === '//' ? 2 : 0, -1);
+		foreach ($args as $key => $value) {
+			$url->setQueryParameter($key, $value);
+		}
 
-        return substr($destination, 0, 2) === '//' ? (string) $url : $url->getRelativeUrl();
-    }
+		return substr($destination, 0, 2) === '//' ? (string) $url : $url->getRelativeUrl();
+	}
 
 }
